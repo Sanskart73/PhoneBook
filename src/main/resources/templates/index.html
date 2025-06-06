@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PhoneBook for Your Contacts</title>
+   <link rel="icon" href="/assets/logo.png" type="image/png">
+  <meta content="" name="Technoit - IT Solutions & Business Services Multipurpose Responsive Website Template">
+  <meta name="description" content="Technoit - IT Solutions & Business Services Multipurpose Responsive Website Template">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="" name="ZRTHEMES">
+
+  <!-- Favicons -->
+  <link href="assets/images/favicon.png" rel="icon">
+  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+  <head>
+  <link href="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet">
+  <!-- Font Awesome (CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&amp;display=swap" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/stylesheets/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/stylesheets/styles.css" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<style>
+  .hero-image {
+    width: 400px;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: -120px;
+}
+
+</style>
+</head>
+
+<body>
+
+  <header id="header" class="header d-flex align-items-center sticked stikcy-menu">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/home" class="logo d-flex align-items-center">
+        <h1><b style="color: white;">PhoneBook</b></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/home" class="">Home</a></li>
+          <li><a href="/user/Addcontact" class="">ADD Contact</a></li>
+          <li><a href="/user/showContacts" class="">Display Contacts</a></li>
+          <li><a href="/search" class="">Search</a></li>
+          <li class="dropdown"><a href="#"><span>Menu</span><ion-icon name="chevron-down-outline"></ion-icon></a>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/faq">FAQs</a></li>
+              <li><a href="/privacy">Terms &amp; Conditions</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/blogs">Blogs</a></li>
+              <li><a href="/blogDetails">Blog Detail Page</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="/blogs">News</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+      <a href="/signup" class="btn-get-started hide-on-mobile">Sign Up</a>
+      <a href="/user/showContacts" class="btn-get-started hide-on-mobile">Login</a>
+     <button id="darkmode-button">
+  <ion-icon id="sun-icon" name="sunny-outline"></ion-icon>
+  <ion-icon id="moon-icon" name="moon-outline"></ion-icon>
+</button>
+
+ <script>
+  // Check for saved theme preference
+  const currentTheme = localStorage.getItem("theme") || "light";
+  const body = document.body;
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+
+  // Set initial theme based on preference
+  if (currentTheme === "dark") {
+    body.classList.add("dark-mode");
+    sunIcon.style.display = "inline";
+    moonIcon.style.display = "none";
+  } else {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "inline";
+  }
+
+  // Toggle theme on button click
+  document.getElementById("darkmode-button").addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    const isDarkMode = body.classList.contains("dark-mode");
+
+    // Toggle icon visibility
+    sunIcon.style.display = isDarkMode ? "inline" : "none";
+    moonIcon.style.display = isDarkMode ? "none" : "inline";
+
+    // Save preference
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  });
+</script>
+
+
+</button>
+
+      
+    </div>
+  </header>
+  <!-- End Header -->
+
+ <section id="hero" class="hero sticked-header-offset">
+  <div id="particles-js"></div>
+  <div id="repulse-circle-div"></div>
+  <div class="container position-relative">
+    <div class="row gy-5 aos-init aos-animate">
+      
+      <!-- Left Side Image -->
+      <div class="col-lg-5 d-flex align-items-center justify-content-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/2343/2343648.png" alt="Logo" class="hero-image">
+      </div>
+
+      <!-- Right Side Content -->
+      <div class="col-lg-7 dark-bg order-lg-1 d-flex flex-column justify-content-start text-left caption">
+        <h2 data-aos="fade-up">Delivering PhoneBook Services <span>On Web</span><span class="circle" data-aos="fade-right" data-aos-delay="800">.</span></h2>
+        <p data-aos="fade-up" data-aos-delay="400">Manage all your contacts in one place. Simple, fast, and secure digital phonebook.</p>
+        
+        
+        
+        <div class="d-flex justify-content-start">
+          <a href="/search" class="btn-get-started mr-20" data-aos="fade-up" data-aos-delay="800">Search Contact</a>
+          <a href="/signup" class="btn-get-started" data-aos="fade-up" data-aos-delay="1000">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <main id="main">
+        <!-- Start Service Section -->
+        <div id="services" class="section">
+          <div class="top-icon-box position-relative">
+            <div class="container position-relative">
+              <div class="row gy-4">
+      
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="icon"><img src="assets/images/icons/service-design.svg" alt="icon"></div>
+                    <h4 class="title"><a href="" class="stretched-link">Application Design</a></h4>
+                    <p>Add, edit, and organize your contacts easily. Our PhoneBook is fast, user-friendly, and perfect for everyday use.</p>
+                  </div>
+                </div>
+                <!--End Icon Box -->
+      
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="icon-box">
+                    <div class="icon"><img src="assets/images/icons/service-hosting.svg" alt="icon"></div>
+                    <h4 class="title"><a href="" class="stretched-link">Web Hosting</a></h4>
+                    <p>Host your contacts on the cloud with ease.
+                      Fast, secure, and always available when you need them.</p>
+                  </div>
+                </div>
+                <!--End Icon Box -->
+      
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
+                  <div class="icon-box">
+                    <div class="icon"><img src="assets/images/icons/service-social.svg" alt="icon"></div>
+                    <h4 class="title"><a href="" class="stretched-link">Social Profile</a></h4>
+                    <p>Connect contacts with their social profiles in one place.
+                      Your personal network, now smarter and more social.</p>
+                  </div>
+                </div>
+                <!--End Icon Box -->
+      
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="icon"><img src="assets/images/icons/service-seo.svg" alt="icon"></div>
+                    <h4 class="title"><a href="" class="stretched-link">SEO Optimization</a></h4>
+                    <p>Our PhoneBook is built with SEO best practices in mind.
+                      Get discovered faster and rank higher with optimized contact pages.</p>
+                  </div>
+                </div>
+                <!--End Icon Box -->
+      
+      
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="icon-box">
+                    <div class="icon"><img src="assets/images/icons/service-cloud.svg" alt="icon"></div>
+                    <h4 class="title"><a href="" class="stretched-link">Cloud Server</a></h4>
+                    <p>Powered by cloud servers for real-time syncing and backup.
+                      Your contacts are safe, scalable, and always available.</p>
+                  </div>
+                </div>
+                <!--End Icon Box -->
+      
+      
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
+                  <div class="icon-box">
+                    <div class="icon"><img src="assets/images/icons/service-secure.svg" alt="icon"></div>
+                    <h4 class="title"><a href="" class="stretched-link">Data Secuity</a></h4>
+                    <p>Security comes first — your contacts are safe with us.
+                      Protected by strong encryption and modern security protocols.</p>
+                  </div>
+                </div>
+                <!--End Icon Box -->
+      
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Service Section -->
+
+        <!-- Featured -->
+        <section>
+          <div class="container" id="featured">
+              <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+                <h2>Why Choose Us</h2>
+                <p>Designed for simplicity, speed, and security.
+                  </p>
+              </div>
+          <div class="row">
+            <!-- start  left -->
+            <div class="col-md-4 left">
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
+                <div class="description">
+                  <h4>Experience</h4>
+                  <p>We have experience building secure and useful apps.
+                    Our PhoneBook is designed with real users in mind.</p>
+                </div>
+                  <div class="icon">
+                    <img src="assets/images/icons/icon-1.svg" alt="icon">
+                  </div>
+              </div>
+              
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="400">
+                <div class="description">
+                  <h4>Products</h4>
+                  <p>Our PhoneBook helps you store and manage contacts easily.
+                    Fast, clean, and made for everyday use.</p>
+                </div>
+                  <div class="icon">
+                    <img src="assets/images/icons/icon-2.svg" alt="icon">
+                  </div>
+            </div>
+              
+              
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="500">
+                <div class="description">
+                  <h4>Approach</h4>
+                  <p>We focus on simplicity, speed, and easy access.
+                    Your contacts are just a click away — no confusion.</p>
+                </div>
+                <div class="icon">
+                  <img src="assets/images/icons/icon-3.svg" alt="icon">
+                </div>
+              </div>
+            </div>
+            <!-- end  left -->
+            
+            <!-- start  center -->
+            <div class="col-md-4 p-4 p-sm-5 center">
+              <div class="list-center-wrap" data-aos="fade-up" data-aos-delay="100">
+                <div class="center-icon">
+                  <img src="assets/images/features.jpg" alt="icon">
+                </div>
+              </div>
+            </div>
+            <!-- end  center -->
+            <!-- start  right -->
+            <div class="col-md-4 right">
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon">
+                  <img src="assets/images/icons/icon-4.svg" alt="icon">
+                </div>
+                <div class="description">
+                  <h4>Pricing</h4>
+                  <p>Enjoy our PhoneBook with free and flexible plans.
+                    Perfect for students, teams, and professionals.</p>
+                </div>
+            </div>
+              
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon">
+                  <img src="assets/images/icons/icon-5.svg" alt="icon">
+                </div>
+                <div class="description">
+                  <h4>Delivery</h4>
+                  <p>Quick setup and ready-to-use features.
+                    Your contact list is online in just minutes.
+                    </p>
+                </div>
+              </div>
+              
+              
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon">
+                  <img src="assets/images/icons/icon-6.svg" alt="icon">
+                </div>
+                <div class="description">
+                  <h4>Support</h4>
+                  <p>We’re here if you need help anytime.
+                    Friendly support and simple solutions, always.</p>
+                </div>
+              </div>
+            </div>
+            <!-- end  right -->
+          </div>
+          
+        </div>
+    </section>
+    <!-- Featured -->
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Our Portfolio</h2>
+          <p>Take a look at the features and designs we've built for our PhoneBook project.</p>
+        </div>
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <ul class="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">AI tools</li>
+              <li data-filter=".filter-product">Calling Experience</li>
+              <li data-filter=".filter-branding">Features</li>
+              <li data-filter=".filter-books">Scam Alerts</li>
+            </ul><!-- End Portfolio Filters -->
+          </div>
+
+          <div class="row gy-4 portfolio-container">
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="assets/images/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/images/portfolio/product-1.jpg" class="img-fluid" alt=""></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+              <div class="portfolio-wrap">
+                <a href="assets/images/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/images/portfolio/product-2.jpg" class="img-fluid" alt=""></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+              <div class="portfolio-wrap">
+                <a href="assets/images/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/images/portfolio/product-3.jpg" class="img-fluid" alt=""></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/images/portfolio/product-4.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/images/portfolio/product-4.jpg" class="img-fluid" alt=""></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="assets/images/portfolio/product-5.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/images/portfolio/product-5.jpg" class="img-fluid" alt=""></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+              <div class="portfolio-wrap">
+                <a href="assets/images/portfolio/product-6.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/images/portfolio/product-6.jpg" class="img-fluid" alt=""></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+   <!-- Start Pricing Section -->
+<div class="pricing section">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pricing Plans</h2>
+        <p>Buy Suitable plan according to your Need</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card text-center">
+            <div class="title">
+              <h2>Basic</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>25</h4>
+            </div>
+            <div class="option">
+              <ul>
+                <li><icon name="check-circle"></icon> Unlimited Storage</li>
+                <li><icon name="check-circle"></icon> Unilimited contacts saving</li>
+                <li><icon name="check-circle"></icon> Free SSL</li>
+                <li><icon name="check-circle"></icon> Daily Backup</li>
+                <li><icon name="check-circle"></icon> Free Templates</li>
+                <li><icon name="check-circle"></icon> Free Email</li>
+                <li><icon name="check-circle"></icon> 10 Databases</li>
+                <li><icon name="check-circle"></icon> Unlimited Email Address</li>
+                <li><icon name="check-circle"></icon> Live Support</li>
+              </ul>
+            </div>
+            <a href="#">Order Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card text-center">
+            <div class="title">
+              <h2>Standard</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>50</h4>
+            </div>
+            <div class="option">
+              <ul>
+                <li><icon name="check-circle"></icon> Unlimited GB Space</li>
+                <li><icon name="check-circle"></icon> 30 Domain Names</li>
+                <li><icon name="check-circle"></icon> Free SSL</li>
+                <li><icon name="check-circle"></icon> Daily Backup</li>
+                <li><icon name="check-circle"></icon> Free Templates</li>
+                <li><icon name="check-circle"></icon> Free Email</li>
+                <li><icon name="check-circle"></icon> 10 Databases</li>
+                <li><icon name="check-circle"></icon> Unlimited Email Address</li>
+                <li><icon name="check-circle"></icon> Live Support</li>
+              </ul>
+            </div>
+            <a href="#">Order Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card text-center">
+            <div class="title">
+              <h2>Premium</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>100</h4>
+            </div>
+            <div class="option">
+              <ul>
+                <li><icon name="check-circle"></icon> Unlimited GB Space</li>
+                <li><icon name="check-circle"></icon> 30 Domain Names</li>
+                <li><icon name="check-circle"></icon> Free SSL</li>
+                <li><icon name="check-circle"></icon> Daily Backup</li>
+                <li><icon name="check-circle"></icon> Free Templates</li>
+                <li><icon name="check-circle"></icon> Free Email</li>
+                <li><icon name="check-circle"></icon> 10 Databases</li>
+                <li><icon name="check-circle"></icon> Unlimited Email Address</li>
+                <li><icon name="check-circle"></icon> Live Support</li>
+              </ul>
+            </div>
+            <a href="#">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Pricing Section -->
+
+
+   <!--  Testimonials Section  -->
+<section id="testimonials" class="testimonials">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-header">
+      <h2>Costomers Reviews</h2>
+      <p>Top Reviews from our Daily Users</p>
+    </div>
+
+    <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center info-box">
+                <img src="assets/images/testimonials/testimonial-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>John Doe</h3>
+                  <h4>CFO</h4>
+                </div>
+              </div>
+              <p>
+                This phonebook app has transformed how I keep track of my contacts. It’s fast, simple, and incredibly organized!
+              </p>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center info-box">
+                <img src="assets/images/testimonials/testimonial-2.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Afa Rose</h3>
+                  <h4>Web Designer</h4>
+                </div>
+              </div>
+              <p>
+                I love how this app keeps my contacts perfectly organized. It’s a must-have for anyone who values efficiency.
+              </p>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center info-box">
+                <img src="assets/images/testimonials/testimonial-3.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Keena Lara</h3>
+                  <h4>Store Owner</h4>
+                </div>
+              </div>
+              <p>
+                This phonebook app is a lifesaver. It helps me manage my business contacts without any hassle. Highly recommended!
+              </p>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center info-box">
+                <img src="assets/images/testimonials/testimonial-4.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Fizzi Brandon</h3>
+                  <h4>Freelancer</h4>
+                </div>
+              </div>
+              <p>
+                Simple, clean, and effective. This app is exactly what I needed to keep my contacts sorted and accessible.
+              </p>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<!-- End Testimonials Section -->
+
+    <!--  Start Counter Section  -->
+    <div id="stats-counter" class="call-to-action stats-counter section">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-4">
+            <div class="stats-item d-flex flex-column align-items-center">
+              <div class="icon circle"><img src="assets/images/icons/happy-clients.svg" alt="icon"></div>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p><span>Happy Clients</span> We’ve helped hundreds manage their contacts smarter and faster with our PhoneBook.  </p>
+            </div><!-- End Stats Item -->
+            </div>
+            <div class="col-lg-4">
+            <div class="stats-item d-flex flex-column align-items-center">
+              <div class="icon circle"><img src="assets/images/icons/complete-projects.svg" alt="icon"></div>
+              <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
+              <p><span>Completed Projects</span> From personal use to businesses, our PhoneBook has powered over 500 contact solutions.</p>
+            </div><!-- End Stats Item -->
+            </div>
+            <div class="col-lg-4">
+            <div class="stats-item d-flex flex-column align-items-center">
+              <div class="icon circle"><img src="assets/images/icons/hours-support.svg" alt="icon"></div>
+              <span data-purecounter-start="0" data-purecounter-end="453" data-purecounter-duration="1" class="purecounter"></span>
+              <p><span>Hours Of Support</span> We’re here for you! Reliable support whenever you need help managing your contacts.</p>
+            </div><!-- End Stats Item -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  End Counter Section  -->
+
+    <!--  Clients Section  -->
+    <div id="clients" class="clients section">
+      <div class="container" data-aos="zoom-out">
+  
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/images/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client-8.png" class="img-fluid" alt=""></div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <!-- End Clients Section -->
+
+
+    <!--  Our Team Section  -->
+    <section id="team" class="team sections-bg">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Team</h2>
+          <p>Meet the passionate team behind your smart and secure PhoneBook experience.</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="assets/images/team/team-1.jpg" class="img-fluid" alt="">
+              <h4>Javier Escuala</h4>
+              <span>UI/UX & Frontend</span>
+              <div class="social">
+               
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="assets/images/team/team-2.jpg" class="img-fluid" alt="">
+              <h4>Abigale Roberts</h4>
+              <span>Backend & Database</span>
+              <div class="social">
+                
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="assets/images/team/team-3.jpg" class="img-fluid" alt="">
+              <h4>Bill Williams</h4>
+              <span>Maintenaince</span>
+              <div class="social">
+               
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="assets/images/team/team-4.jpg" class="img-fluid" alt="">
+              <h4>Sadie Adler</h4>
+              <span>Business Manager</span>
+              <div class="social">
+                
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Our Team Section -->
+
+
+    <!--  Frequently Asked Questions Section  -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>FAQ's</h2>
+          <p>Find quick answers to the most common questions about using PhoneBook.</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-1">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    What is PhoneBook?
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse show" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    PhoneBook is a simple and smart online tool to save and manage your contacts.
+                    You can add names, phone numbers, emails, and more.
+                    It helps you stay organized by keeping everything in one place.
+                    No more losing numbers or searching through messy notes.
+                    Whether for personal use or business, PhoneBook makes it easy.
+                    You just log in and start managing your contacts right away.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-2">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    Is my contact data safe?
+                  </button>
+                </h3>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Yes, your data is completely safe with us.
+                    We use strong encryption to protect your contact details.
+                    Only you can access your personal information.
+                    We also back up your data so you never lose it.
+                    We never sell or share your contacts with anyone.
+                    Our system follows modern security practices to ensure safety.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-3">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    Can I access PhoneBook from different devices?
+                  </button>
+                </h3>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Yes, PhoneBook works on all your devices.
+                    You can use it on your phone, tablet, laptop, or desktop.
+                    There’s no need to install anything — just open your browser.
+                    Your data stays synced, so you always have the latest contacts.
+                    This is perfect for people who move between home and office.
+                    Anywhere you go, your contact list goes with you.
+                  </div>
+                  </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-4">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    Do I need to install anything?
+                  </button>
+                </h3>
+                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    No, PhoneBook is fully web-based.
+                    Just open your browser and log in to your account.
+                    You don’t have to download or update any software.
+                    This means your data is always up to date on every device.
+                    It also saves space on your phone or computer.
+                    All you need is an internet connection.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Frequently Asked Questions Section -->
+
+
+    <!--  Call To Action Section  -->
+    <section id="call-to-action" class="call-to-action">
+      <div class="container text-center aos-init aos-animate" data-aos="zoom-out">
+         <div class="row gy-4">
+          <div class="col-lg-12">
+              <h3>Let's Discuss your Projects</h3>
+              <p>We pride ourselves with our ability to perform and deliver results. Use the form below to discuss your project needs with our team, we will get back asap</p>
+              <a class="cta-btn" href="mailto:info@example.com">Conatct Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
+
+
+    <!--  Recent Blog Posts Section  -->
+    <section id="recent-posts" class="recent-posts sections-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Blogs</h2>
+          <p>Read our latest blogs to learn tips, updates, and smart ways to manage your contacts.</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <article>
+              <div class="post-img">
+                <img src="assets/images/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+              <p class="post-category">User Queries</p>
+              <h2 class="title">
+                <a href="blog-details.html">Why You Should Switch to a Digital PhoneBook ?</a>
+              </h2>
+              <div class="d-flex align-items-center">
+                <div class="post-meta">
+                  <p class="post-author">Alex Summers</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Feb 1, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+              <div class="post-img">
+                <img src="assets/images/blog/blog-2.jpg" alt="" class="img-fluid">
+              </div>
+              <p class="post-category">Tips for New User</p>
+              <h2 class="title">
+                <a href="blog-details.html">5 Easy Ways to Organize Your Contacts Efficiently</a>
+              </h2>
+              <div class="d-flex align-items-center">
+                <div class="post-meta">
+                  <p class="post-author">Alexendra rousey</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">feb 5, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+              <div class="post-img">
+                <img src="assets/images/blog/blog-3.jpg" alt="" class="img-fluid">
+              </div>
+              <p class="post-category">Behind The Scene Struggle</p>
+              <h2 class="title">
+                <a href="blog-details.html">How We Built Our PhoneBook App – Behind the Scenes</a>
+              </h2>
+              <div class="d-flex align-items-center">
+                <div class="post-meta">
+                  <p class="post-author">Main Dow</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">march 22, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div><!-- End post list item -->
+
+        </div><!-- End recent posts list -->
+
+      </div>
+    </section><!-- End Recent Blog Posts Section -->
+
+    <!-- Start Contact Section -->
+    <div id="contact" class="contact-section section">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>Have questions or need help? Reach out to us anytime!</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12" data-aos="fade-right">
+            <div class="contact-information-box-3">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Address:</h6>
+                      <p>11 West Town</p>
+                      <p>PBo 12345, United States</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Phone:</h6>
+                      <p>+91 01234 56 789</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Email:</h6>
+                      <p>info@example.com</p>
+                      <p>email@example.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12" data-aos="fade-left">
+            <div class="contact-form-box contact-form contact-form-3">
+              <div class="form-container-box">
+                <form class="contact-form form" id="ajax-contact" method="post" action="assets/phpscripts/contact.php">
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group form-input-box">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name*"
+                            required="required" data-error="Name is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group form-input-box">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Email*"
+                            required="required" data-error="Valid email is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group form-input-box">
+                          <input type="text" class="form-control" name="subject" placeholder="Subject"
+                            required="required">
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group form-input-box">
+                          <textarea class="form-control" id="message" name="message" rows="7"
+                            placeholder="Write Your Message*" required="required"
+                            data-error="Please, leave us a message."></textarea>
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="submit" data-text="Send Message">Send Message</button>
+                      </div>
+                      <div class="messages">
+                        <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"
+                          id="msgSubmit"><button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">&times;</button> Thank You! your message has been sent. </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact Section -->
+
+
+  </main><!-- End #main -->
+
+  <!--  Footer  -->
+  <footer id="footer" class="footer-section">
+    <div class="container">
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+ <a href="/home" class="logo d-flex align-items-center">
+        <h1><b style="color: white;">PhoneBook</b></h1>
+      </a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Our PhoneBook is a smart contact management system built for easy use.
+                              It offers secure storage, quick search, cloud backup, and multi-device access.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#" class="facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                      <div class="service-widget footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Services</h3>
+                        </div>
+                        <ul class="list">
+                          <li><a href="/services">Contact Management</a></li>
+                          <li><a href="/services">Cloud Backup & Sync</a></li>
+                          <li><a href="/services">Cloud Services</a></li>
+                          <li><a href="/services">Secure Data Storage</a></li>
+                          <li><a href="/services">Multi-Device Access</a></li>
+                          <li><a href="/services">Group & Tag Contacts</a></li>
+                          <li><a href="/services">Import/Export Contacts</a></li>
+                          <li><a href="/services">Search & Filter System</a></li>
+                          <li><a href="/services">Real-Time Updates</a></li>
+                          <li><a href="/services">Admin Dashboard</a></li>
+                      </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                      <div class="service-widget footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Information</h3>
+                        </div>
+                          <ul class="list">
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/pricing">Pricing</a></li>
+                            <li><a href="/team">Team</a></li>
+                            <li><a href="/porfolio">Portfolio</a></li>
+                            <li><a href="/faq">FAQs</a></li>
+                            <li><a href="/team">Team</a></li>
+                            <li><a href="/blogs">Blogs</a></li>
+                            <li><a href="/blogsDetails">Blog Details</a></li>
+                            <li><a href="/coming-soon">Coming Soon</a></li>
+                            <li><a href="/privacy">Terms & Conditions</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="contact-widget footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Contacts</h3>
+                        </div>
+                          <div class="footer-text">
+                              <p> 101 Bhopal  , PBO 12345 ,Madhya Pradesh Bhopal</p>
+                              <p> +91 1234 56 789</p>
+                              <p> contact@example.com</p>
+                          </div>
+                    </div>
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Newsletter</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-left text-lg-left">
+                    <div class="copyright-text">
+                        <p>PhoneBook - Designed by <a href="#">Sanskar & Sumit</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center active">
+    <ion-icon name="arrow-up-outline" style="color: white;"></ion-icon>
+  </a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/javascripts/jquery.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/javascripts/plugins.js"></script>
+  <script src="assets/javascripts/purecounter_vanilla.js"></script>
+  <script src="assets/javascripts/validator.min.js"></script>
+  <script src="assets/javascripts/contactform.js"></script>
+  <script src="assets/javascripts/particles.min.js"></script>
+  <script src="assets/javascripts/script.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/javascripts/main.js"></script>
+
+
+
+</body></html>
